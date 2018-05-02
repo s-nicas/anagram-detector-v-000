@@ -17,7 +17,7 @@ def match(array)
 
   array.collect do |word|
     characters = word.split('')
-      to_hash= characters.each_with_object(Hash.new(0)){|signs, count| signs[count]+=1}
+      to_hash= characters.each_with_object(Hash.new(0)){|signs, count| count[signs]+=1}
         if to_hash == letters_count
           results << word
         end
